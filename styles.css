@@ -1,0 +1,90 @@
+/*google fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* defining color variables  */
+:root {
+  --dark-violet: hsl(256, 26%, 20%);
+  --grayish-blue: hsl(216, 30%, 68%);
+  --very-dark-violet: hsl(270, 9%, 17%);
+  --dark-grayish-violet: hsl(273, 4%, 51%);
+  --very-light-grey: hsl(0, 0%, 98%);
+}
+
+body {
+  color: var(--dark-violet);
+  font-family: "Karla", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "DM Serif Display", sans-serif;
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 15px;
+}
+
+.btn-reverse {
+  border-color: var(--dark-violet);
+  color: var(--dark-violet);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1200px;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex > div {
+  flex: 1;
+}
+
+/* nav styling */
+nav {
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 30px;
+}
+
+nav li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dark-grayish-violet);
+}
+
+/* header styling */
+header {
+  background-color: var(--dark-violet);
+  color: white;
+}
+
+/* section styling */
+section {
+}
+
+/* footer styling  */
+footer {
+}
