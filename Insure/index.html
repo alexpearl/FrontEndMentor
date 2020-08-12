@@ -8,6 +8,7 @@
   
   <title>Frontend Mentor | Insure landing page</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -15,10 +16,14 @@
   <nav>
     <div class="container">
       <div class="flex">
-        <div>
+        <div class="img-wrapper">
           <img src="./images/logo.svg" alt="">
         </div>
-        <ul>
+        <button class="hamburger" id="hamburger">
+          <img class="open" src="./images/icon-hamburger.svg" alt="">
+          <img class="close" src="./images/icon-close.svg" alt="">
+        </button>
+        <ul id="menu">
           <li><a href="#">How we work</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Account</a></li>
@@ -32,7 +37,7 @@
   <!-- header section -->
   <header>
     <div class="container">
-      <div class="flex align-start">
+      <div class="flex align-start reverse-mobile">
         <div>
           <h1 class="line-top">Humanizing your insurance.</h1>
           <p>Get your life insurance coverage easier and faster. We blend our expertise 
@@ -49,7 +54,7 @@
   </header>
 
 <!-- we're different section -->
-<section class="container"> 
+<section class="container top"> 
   <h2 class="line-top line-violet">We’re different</h2>
   <div class="flex">
     <div class="tile">
@@ -86,23 +91,22 @@
     <div> 
       <h2>Find out more about how we work</h2>
     </div>
-    <div>
-      <button class="btn">
+    <button class="btn">
         How we work
-      </button>
-    </div>
+    </button>
+    
   </div>
 </section>
 
 <!-- footer section -->
 <footer>
   <div class="container" >
-  <div class="flex">
+  <div class="flex border-bottom">
     <div>
        <img src="./images/logo.svg" alt="">
     </div>
     
-      <ul>
+      <ul class="flex">
         <li><a href="#"><img src="./images/icon-facebook.svg" alt=""></a></li>
         <li><a href="#"><img src="./images/icon-twitter.svg" alt=""></a></li>
         <li><a href="#""><img src="./images/icon-pinterest.svg" alt=""></a></li>
@@ -110,7 +114,7 @@
       </ul>
     
   </div>
-  <div class="flex">
+  <div class="flex align-start">
     <div>
       <h4>Our company</h4>
       <ul>

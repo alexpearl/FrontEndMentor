@@ -41,6 +41,7 @@ h3 {
 }
 
 p {
+  line-height: 1.7;
   opacity: 0.8;
 }
 
@@ -65,6 +66,7 @@ p {
   padding: 15px 25px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  display: inline-block;
 }
 
 .btn-reverse {
@@ -73,12 +75,14 @@ p {
 }
 
 .container {
+  padding: 0 20px;
   margin: 0 auto;
   max-width: 100%;
   width: 1200px;
-  padding: 20px;
 }
-
+.top {
+  margin-top: 150px;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -93,12 +97,24 @@ p {
 }
 /* nav styling */
 nav {
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+}
+
+nav .hamburger {
+  display: none;
 }
 
 nav ul {
   display: flex;
   list-style-type: none;
   padding: 0;
+  align-items: center;
 }
 
 nav li {
@@ -117,7 +133,11 @@ header {
   color: white;
   padding: 50px 0;
   position: relative;
-  margin-bottom: 250px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+header * {
+  z-index: 1;
 }
 
 header::after {
@@ -129,8 +149,10 @@ header::after {
   top: 0;
   right: 0;
   height: 100%;
-  width: 100%;
+  width: 50%;
+  z-index: 2;
 }
+
 header::before {
   content: "";
   background-image: url("./images/bg-pattern-intro-left-desktop.svg");
@@ -141,6 +163,7 @@ header::before {
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 0;
 }
 
 .ivan {
@@ -148,13 +171,185 @@ header::before {
 }
 
 /* section styling */
-section {
+.bg-violet {
+  background-image: url("./images/bg-pattern-how-we-work-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: var(--dark-violet);
+  background-size: 50% 100%;
+  padding: 70px;
+  position: relative;
+  margin: 85px auto;
 }
 
+.bg-violet h2 {
+  color: white;
+  padding: 0;
+  width: 60%;
+  font-size: 3em;
+}
 .tile {
-  margin-top: 50px;
+  margin-top: 70px;
+  padding: 0 10px;
 }
 
 /* footer styling  */
 footer {
+  background-image: url("./images/bg-pattern-footer-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: var(--very-light-grey);
+  padding: 60px 0 30px;
+  position: relative;
+}
+
+footer ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+footer ul.flex li:not(:first-child) {
+  margin-left: 15px;
+}
+
+footer h4 {
+  color: var(--dark-grayish-violet);
+  text-transform: uppercase;
+}
+
+footer li {
+  margin-bottom: 15px;
+}
+
+footer li a {
+  color: var(--dark-violet);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--dark-grayish-violet);
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    text-align: center;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  nav .hamburger {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+  }
+
+  nav .hamburger::focus {
+    outline: none;
+  }
+
+  nav .hamburger .close {
+    display: none;
+  }
+
+  nav .hamburger.show .open {
+    display: none;
+  }
+  nav .hamburger.show .close {
+    display: block;
+  }
+
+  nav .flex {
+    flex-direction: row;
+    padding-top: 25px;
+  }
+
+  nav .img-wrapper {
+    text-align: left;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.show {
+    background-color: var(--very-dark-violet);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding-top: 30px;
+    margin: 0;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh- 70px);
+    z-index: 100;
+  }
+
+  nav ul li {
+    margin: 30px 0;
+  }
+
+  nav ul a {
+    color: white;
+  }
+
+  .btn-reverse {
+    border-color: white;
+    color: white;
+  }
+
+  header {
+    padding-top: 0;
+    margin-bottom: 50px;
+    overflow-x: hidden !important;
+  }
+
+  header::before,
+  header::after {
+    display: none;
+  }
+
+  .ivan {
+    display: inline-block;
+    margin-left: -20px;
+    margin-bottom: -10px;
+    max-width: calc(100%+40px);
+  }
+  .reverse-mobile {
+    flex-direction: column-reverse;
+  }
+  .line-top::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bg-violet {
+    background-image: url(./images/bg-pattern-how-we-work-mobile.svg);
+  }
+
+  .bg-violet h2 {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .top {
+    margin-top: 50px;
+  }
+
+  footer {
+    background-image: url(./images/bg-pattern-footer-mobile.svg);
+    background-size: 100% auto;
+    background-position: top center;
+  }
+
+  footer ul.flex {
+    flex-direction: row;
+  }
+  footer .flex div {
+    width: 100%;
+  }
 }
